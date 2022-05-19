@@ -9,17 +9,19 @@ test your answer!
 
 Examples:
 
+
+
+
+***********************************************************************/
+function funcTimer(time, func){
+  setTimeout(func, time);
+}
+
 function partyFunc () {
   console.log("Party time!")
 }
 
 funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
-
-
-***********************************************************************/
-
-// your code here!
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
