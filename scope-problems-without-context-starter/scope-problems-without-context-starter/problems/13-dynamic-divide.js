@@ -10,31 +10,23 @@ Look below to see how this function is invoked:
 
 
 ***********************************************************************/
-function recVolume(height) {
-  let dimensions = [height];
-  const measure = (num) => {
-    if (dimensions.length < 3) {
-      dimensions.push(num);
-    }
-    if (dimensions.length === 3) {
-      let sum = dimensions.reduce((acc, el) => (acc *= el));
-      return sum;
-    } else {
-      return measure;
-    }
-  };
-  return measure;
+
+function dynamicDivide(divisor) {
+  return function(dividend){
+    return dividend / divisor;
+  }
 }
 
-// your code here
+
+
 const halfer = dynamicDivide(2); // returns a function
-halfer(20); // returns 10
+console.log(halfer(20)); // returns 10
 
 const divideByThree = dynamicDivide(3);
-divideByThree(30); // returns 10
+console.log(divideByThree(30)); // returns 10
 
 const  divideByFive = dynamicDivide(5);
-divideByFive(50); // returns 10
+console.log(divideByFive(50)); // returns 10
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
