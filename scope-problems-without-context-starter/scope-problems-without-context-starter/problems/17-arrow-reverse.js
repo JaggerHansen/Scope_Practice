@@ -5,15 +5,15 @@ reversed.
 Write this function using a fat arrow function!
 
 Examples:
-let result1 = arrowReverseString("hello"); // returns "olleh"
-let result2 = arrowReverseString("garden"); // returns "nedrag"
-let result3 = arrowReverseString("potato"); // returns "otatop"
+
 
 
 ***********************************************************************/
-
+let arrowReverseString = str => str.split("").reverse().join("")
 // your code here!
-
+let result1 = console.log(arrowReverseString("hello")); // returns "olleh"
+let result2 = console.log(arrowReverseString("garden")); // returns "nedrag"
+let result3 = console.log(arrowReverseString("potato")); // returns "otatop"
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 
 try {
