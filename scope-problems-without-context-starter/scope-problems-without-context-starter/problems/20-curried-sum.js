@@ -26,24 +26,39 @@ actually does the required work of summing.
 
 
 Example:
-// 1
-const sum = curriedSum(4); // returns a function
-sum(5) // returns a function
-sum(20) // returns a function
-sum(30) // returns a function
-sum(20); // => returns 75
 
-// 2
-// this function can also be invoked like this:
-const sum = curriedSum(3)(2)(1)(7); // => returns 10
 
 AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - Come up with at least two situations (one per person) on when currying would
   be useful
 ***********************************************************************/
+function curriedSum(numArgs){
+  let nums = []
+  function _curriedSum(num){
+    nums.push(num)
+    if(nums.length === numArgs){
+      let sum = 0
+      for(let num of nums) {
+        sum += num
+      }
+      return sum
+    } else {
+      return _curriedSum
+    }
+  }
+  return _curriedSum
+}
 
 // your code here
 
+// const sum = curriedSum(4); // returns a function
+// sum(5) // returns a function
+// sum(20) // returns a function
+// sum(30) // returns a function
+// sum(20); // => returns 75
+
+
+// const sum = curriedSum(3)(2)(1)(7); // => returns 10
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
